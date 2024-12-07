@@ -12,7 +12,7 @@ def total_salary(path):
     except FileNotFoundError as e:
         print(e)
     finally:
-        return convert_number(total_salary), convert_number(average_salary)
+        return total_salary, average_salary
 
 def get_total_salary(lines):
     total_salary = 0
@@ -28,7 +28,5 @@ def get_total_salary(lines):
 def get_average_salary(total_salary, count_employes):
     return total_salary / count_employes
 
-def convert_number(number):
-    return f"{number:.2f}"
-
-print(total_salary("first_homework\data\employee_data.txt"))
+total, average = total_salary("first_homework/data/employee_data.txt")
+print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
